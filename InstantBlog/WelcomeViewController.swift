@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WelcomeViewController.swift
 //  InstantBlog
 //
 //  Created by Daniel Akinniranye on 7/17/22.
