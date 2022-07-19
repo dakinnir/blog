@@ -14,6 +14,10 @@
 		3A67211D28848B07008295C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A67211B28848B07008295C9 /* LaunchScreen.storyboard */; };
 		3A672125288498D2008295C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A672124288498D2008295C9 /* Constants.swift */; };
 		3A67212B2884E211008295C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A67212A2884E211008295C9 /* GoogleService-Info.plist */; };
+		3A67212E2884E889008295C9 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A67212D2884E889008295C9 /* UIButton+Extensions.swift */; };
+		3A6721302884E8CD008295C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A67212F2884E8CD008295C9 /* LoginViewController.swift */; };
+		3A6721322885BC5F008295C9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6721312885BC5E008295C9 /* SignUpViewController.swift */; };
+		3AA937BE2885D79B0043D1F7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA937BD2885D79B0043D1F7 /* MainTabBarController.swift */; };
 		675B90423738F1C05325AB52 /* Pods_InstantBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D746037BF1D995868D324D9 /* Pods_InstantBlog.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +32,10 @@
 		3A67211E28848B07008295C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A672124288498D2008295C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3A67212A2884E211008295C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3A67212D2884E889008295C9 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		3A67212F2884E8CD008295C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3A6721312885BC5E008295C9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3AA937BD2885D79B0043D1F7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		7D746037BF1D995868D324D9 /* Pods_InstantBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstantBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E484A7BE77314438564B6A12 /* Pods-InstantBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantBlog.release.xcconfig"; path = "Target Support Files/Pods-InstantBlog/Pods-InstantBlog.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,10 +74,11 @@
 		3A67210F28848B04008295C9 /* InstantBlog */ = {
 			isa = PBXGroup;
 			children = (
+				3A67212C2884E869008295C9 /* Extensions */,
 				3A67211028848B04008295C9 /* AppDelegate.swift */,
 				3A67211228848B04008295C9 /* SceneDelegate.swift */,
 				3A672126288498D7008295C9 /* Utils */,
-				3A67211428848B04008295C9 /* WelcomeViewController.swift */,
+				3AA937BC2885D75D0043D1F7 /* Controllers */,
 				3A67211928848B07008295C9 /* Assets.xcassets */,
 				3A67211B28848B07008295C9 /* LaunchScreen.storyboard */,
 				3A67211E28848B07008295C9 /* Info.plist */,
@@ -83,6 +92,25 @@
 				3A672124288498D2008295C9 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		3A67212C2884E869008295C9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A67212D2884E889008295C9 /* UIButton+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3AA937BC2885D75D0043D1F7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A67211428848B04008295C9 /* WelcomeViewController.swift */,
+				3A67212F2884E8CD008295C9 /* LoginViewController.swift */,
+				3A6721312885BC5E008295C9 /* SignUpViewController.swift */,
+				3AA937BD2885D79B0043D1F7 /* MainTabBarController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		8CB5798ED81E7DEB6C825349 /* Pods */ = {
@@ -217,9 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA937BE2885D79B0043D1F7 /* MainTabBarController.swift in Sources */,
+				3A6721302884E8CD008295C9 /* LoginViewController.swift in Sources */,
+				3A6721322885BC5F008295C9 /* SignUpViewController.swift in Sources */,
 				3A67211528848B04008295C9 /* WelcomeViewController.swift in Sources */,
 				3A67211128848B04008295C9 /* AppDelegate.swift in Sources */,
 				3A67211328848B04008295C9 /* SceneDelegate.swift in Sources */,
+				3A67212E2884E889008295C9 /* UIButton+Extensions.swift in Sources */,
 				3A672125288498D2008295C9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

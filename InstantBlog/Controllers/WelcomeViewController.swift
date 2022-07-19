@@ -29,7 +29,7 @@ class WelcomeViewController: UIViewController {
         return label
     }()
     
-    private var signInButton: UIButton = {
+    private var signInOptionButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.backgroundColor = .white
         button.setTitleColor(K.appColor, for: .normal)
@@ -37,12 +37,12 @@ class WelcomeViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         button.updateLayerProperties()
         button.translatesAutoresizingMaskIntoConstraints = false
-    
+        button.addTarget(nil, action: #selector(handleSignInOptionButtonClicked), for: .touchUpInside)
         return button
         
     }()
     
-    private var signUpButton: UIButton = {
+    private var signUpOptionButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.backgroundColor = K.appColor
         button.setTitleColor(.white, for: .normal)
@@ -50,6 +50,8 @@ class WelcomeViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         button.updateLayerProperties()
         button.translatesAutoresizingMaskIntoConstraints = false
+
+        button.addTarget(nil, action: #selector(handleSignUpOptionButtonClicked), for: .touchUpInside)
     
         return button
     }()
@@ -61,11 +63,23 @@ class WelcomeViewController: UIViewController {
         view.backgroundColor = .systemBackground
     }
 
+    @objc func handleSignInOptionButtonClicked() {
+        let viewController = LoginViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @objc func handleSignUpOptionButtonClicked() {
+        let viewController = SignUpViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    
+    
     override func viewDidLayoutSubviews() {
         view.addSubview(welcomeTitleLabel)
         view.addSubview(welcomeMessageLabel)
-        view.addSubview(signInButton)
-        view.addSubview(signUpButton)
+        view.addSubview(signInOptionButton)
+        view.addSubview(signUpOptionButton)
 
         // Constraints for the Subviews
         let welcomeTitleLabelLayoutContraints = [
@@ -81,34 +95,21 @@ class WelcomeViewController: UIViewController {
         ]
         NSLayoutConstraint.activate(welcomeMessageLabelLayoutContraints)
                 
-        let signInButtonLayoutContraints = [
-            signInButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            signInButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            signInButton.heightAnchor.constraint(equalToConstant: 50),
-            signInButton.bottomAnchor.constraint(equalTo: signUpButton.topAnchor, constant: -10),
+        let signInOptionButtonLayoutContraints = [
+            signInOptionButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            signInOptionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            signInOptionButton.heightAnchor.constraint(equalToConstant: 50),
+            signInOptionButton.bottomAnchor.constraint(equalTo: signUpOptionButton.topAnchor, constant: -10),
         ]
-        NSLayoutConstraint.activate(signInButtonLayoutContraints)
+        NSLayoutConstraint.activate(signInOptionButtonLayoutContraints)
                 
-        let signUpButtonLayoutContraints = [
-            signUpButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            signUpButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            signUpButton.heightAnchor.constraint(equalToConstant: 50),
-            signUpButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+        let signUpOptionButtonLayoutContraints = [
+            signUpOptionButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            signUpOptionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            signUpOptionButton.heightAnchor.constraint(equalToConstant: 50),
+            signUpOptionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ]
-        NSLayoutConstraint.activate(signUpButtonLayoutContraints)
+        NSLayoutConstraint.activate(signUpOptionButtonLayoutContraints)
     }
     
-}
-
-
-extension UIButton {
-    
-    // Updating the layer properties: Shadow & Corner Radius
-    func updateLayerProperties() {
-        self.layer.cornerRadius = 5
-        self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 3)
-        self.layer.shadowOpacity = 1.0;
-        self.layer.shadowRadius = 2.4;
-    }
 }
